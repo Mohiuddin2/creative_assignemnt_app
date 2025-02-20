@@ -62,7 +62,7 @@ export default function Home() {
               </FormItem>
             )}
           />
-          <Button className="mt-4">Submit</Button>
+          <Button className="mt-4 animate-in slide-in-from-top bg-slate-50 text-black">Submit</Button>
         </form>
       </Form>
     </div>
