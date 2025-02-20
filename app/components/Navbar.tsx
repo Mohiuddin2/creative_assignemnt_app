@@ -52,13 +52,15 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="absolute top-16 right-0 w-full md:hidden bg-base-100 shadow-lg rounded-box">
+        <div className="absolute top-16 right-0 w-full md:hidden bg-base-100 shadow-lg z-40 rounded-box">
           <ul className="menu menu-vertical px-1">
-            <li><Link href="/">Home</Link></li>
+          <li><Link href="/">Home</Link></li>
             <li><Link href="/assignments">Assignments</Link></li>
+            <li><Link href="/submit">Submit Ass.</Link></li>
+            <li><Link href="/published-blog">Blog</Link></li>
             <li><Link href="/about">About</Link></li>
             <li><Link href="/contact">Contact</Link></li>
-            <li><Link href="/signin" className="btn btn-outline w-full">Sign In</Link></li> {/* Mobile Sign In/Out */}
+            <li><Link href="/signin" className="btn btn-outline w-full">Sign In</Link></li> 
           </ul>
         </div>
       )}

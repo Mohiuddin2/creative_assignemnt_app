@@ -8,6 +8,7 @@ import Highlight from "@tiptap/extension-highlight";
 import BulletList from "@tiptap/extension-bullet-list";
 import OrderedList from "@tiptap/extension-ordered-list";
 import ImageResize from "tiptap-extension-resize-image"; // Use only this for images
+import Link from "@tiptap/extension-link";
 
 export default function RichTextEditor({ content, onChange }) {
   const editor = useEditor({
@@ -34,6 +35,10 @@ export default function RichTextEditor({ content, onChange }) {
           class: "list-disc ml-3",
         },
       }),
+      Link.configure({
+        openOnClick: false,
+        // Add other Link configurations as needed (autolink, protocols, etc.)
+      }),
       Highlight,
       ImageResize, // Use only ImageResize, not Image
     ],
@@ -49,6 +54,9 @@ export default function RichTextEditor({ content, onChange }) {
     },
     immediatelyRender: false, // Avoids SSR hydration mismatch
   });
+  if (!editor) {
+    return null;
+  }
 
   return (
     <div>

@@ -1,8 +1,8 @@
-
+// ToolBar.tsx
 "use client";
+
 import React from "react";
-import { List } from "lucide-react";
-import { Toggle } from "../ui/toggle";
+import { Link2 } from "lucide-react"; // Make sure to import the icon
 
 import {
   Heading1,
@@ -20,17 +20,44 @@ import {
   AlignRight,
   Highlighter,
   Upload,
+  List,
+  ListOrdered,
 } from "lucide-react";
-import { ListOrdered } from "lucide-react";
+import { Toggle } from "../ui/toggle";
 
 export default function ToolBar({ editor }) {
   if (!editor) return null;
+
   const addImage = () => {
     const url = window.prompt("URL");
     if (url) {
       editor.chain().focus().setImage({ src: url }).run();
     }
   };
+
+  const addLink = () => {
+    const previousUrl = editor.getAttributes("link").href;
+    let url = window.prompt("URL", previousUrl || ""); // Provide empty string as default if no link
+
+    if (url === null) {
+      return; // Canceled
+    }
+
+    if (url === "") {
+      editor.chain().focus().extendMarkRange("link").unsetLink().run();
+      return;
+    }
+    if (!url.startsWith('http://') && !url.startsWith('https://')) {
+      url = 'https://' + url; // Or 'http://' if you prefer
+    }
+
+    try {
+      editor.chain().focus().extendMarkRange("link").setLink({ href: url }).run();
+    } catch (e) {
+      alert(e.message);
+    }
+  };
+
 
   const Options = [
     {
@@ -106,7 +133,7 @@ export default function ToolBar({ editor }) {
     {
       icon: <Code className="size-4" />,
       onClick: () => editor.chain().focus().toggleCodeBlock().run(),
-      preesed: editor.isActive("code"),
+      preesed: editor.isActive("codeBlock"),
     },
     {
       icon: <Highlighter className="size-4" />,
@@ -117,6 +144,11 @@ export default function ToolBar({ editor }) {
       icon: <Upload className="size-4" />,
       onClick: () => addImage(),
       preesed: editor.isActive("image"),
+    },
+    {
+      icon: <Link2 className="size-4" />,
+      onClick: () => addLink(),
+      preesed: editor.isActive("link"),
     },
   ];
 
@@ -129,7 +161,6 @@ export default function ToolBar({ editor }) {
           pressed={option.preesed}
           onPressedChange={option.onClick}
           className="bg-slate-400"
-
         >
           {option.icon}
         </Toggle>
