@@ -107,7 +107,7 @@ const PublishedBlog = () => {
         ) : activePost ? (
           <div className="card bg-slate-50 text-black shadow-xl">
             <div className="card-body">
-              <h1 className="card-title">{activePost.title}</h1>
+              {/* <h1 className="card-title">{activePost.title}</h1> */}
               <div
                 className="prose max-w-full"
                 dangerouslySetInnerHTML={{ __html: activePost.content }}
