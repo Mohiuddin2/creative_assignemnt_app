@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
     await assignment.save();
 
     return NextResponse.json({ message: "Rating updated successfully" }, { status: 200 });
-  } catch (error) {
+  } catch (error:any) {
     console.error("Error rating assignment:", error);
 
     // More informative error response for debugging

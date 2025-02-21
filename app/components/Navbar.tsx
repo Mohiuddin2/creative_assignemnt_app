@@ -10,7 +10,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar bg-base-100 shadow-lg">
+    <nav className="navbar bg-base-100 shadow-lg py-0">
       <div className="flex-1">
       <Link href="/" className="btn btn-ghost normal-case text-xl">
           <span className="md:hidden"><span className='text-red-700'><span className='text-4xl'>C</span>reative</span> <span className='text-sm'>ASA</span></span> {/* Mobile view: "Creative" */}
@@ -36,7 +36,7 @@ const Navbar = () => {
               ) : (
                 <Link href="/signin" className="btn btn-outline">Sign In</Link>
               )} */}
-              <Link href="/signin" className="btn btn-outline">Sign In</Link> {/* Placeholder */}
+              <Link href="/signin" className="btn btn-outline py-0">Sign In</Link> {/* Placeholder */}
 
             </li>
           </ul>

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import BlogPost from "../../../models/BlogPost";
 import connectDB from "../../../lib/db";
+import { AnyARecord } from "node:dns";
 
 export async function GET(req: Request, { params }: { params: { blogID: string } }) {
 
@@ -22,7 +23,7 @@ export async function GET(req: Request, { params }: { params: { blogID: string }
     }
 
     return NextResponse.json(post);
-  } catch (error) {
-    return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
+  } catch (error:any) {
+    return NextResponse.json({ error: `Internal Server Error: ${error}` }, { status: 500 });
   }
 }

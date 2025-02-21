@@ -6,7 +6,7 @@ export default function HomePage() {
   return (
     <div className="bg-base-200 text-base-content p-8">
       <div className="max-w-5xl mx-auto text-center py-10">
-        <h1 className="text-5xl font-bold text-primary">Welcome to CASA</h1>
+        <h1 className="text-5xl font-bold text-primary">Welcome to Creative ASA</h1>
         <p className="mt-4 text-lg text-secondary">
           The ultimate digital platform for hassle-free assignment submissions.
         </p>
@@ -21,10 +21,10 @@ export default function HomePage() {
           className="rounded-lg shadow-lg"
         />
         <div className="text-lg">
-          <h2 className="text-3xl font-semibold text-accent">Why Choose AssignEase?</h2>
+          <h2 className="text-3xl font-semibold text-accent">Why Choose Creative ASA?</h2>
           <p className="mt-4">
             In today’s digital world, managing assignments has never been easier. 
-            AssignEase allows students to submit their work effortlessly, while teachers 
+            Creative ASA allows students to submit their work effortlessly, while teachers 
             can review, rate, and provide feedback—all in one place.
           </p>
           <ul className="list-disc list-inside mt-4">
@@ -36,9 +36,9 @@ export default function HomePage() {
           </ul>
 
           <div className="why-choose-container">
-      <h2 className='text-3xl mt-3'>Why Choose AssignEase?</h2>
+      <h2 className='text-3xl mt-3'>Why Choose Creative ASA?</h2>
       <p>
-        In today’s digital age, managing assignments has never been simpler. AssignEase streamlines the process for both students and teachers, offering an easy-to-use platform to submit, review, rate, and provide feedback—all in one place.
+        In today’s digital age, managing assignments has never been simpler. Creative ASA streamlines the process for both students and teachers, offering an easy-to-use platform to submit, review, rate, and provide feedback—all in one place.
       </p>
       <ul>
         <li>
@@ -106,7 +106,7 @@ export default function HomePage() {
         <h2 className="text-4xl font-bold text-center text-secondary">Join Now!</h2>
         <p className="text-center mt-4">
           Experience a revolutionary way of managing assignments. Whether you’re a 
-          student or a teacher, AssignEase is designed to simplify your workload.
+          student or a teacher, Creative ASA is designed to simplify your workload.
         </p>
         <div className="flex justify-center mt-6">
           <Link href="/signup" className="btn btn-primary px-6 py-3 text-lg">Get Started</Link>

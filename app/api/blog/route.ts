@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
     const result = await blogPost.save();
 
     return NextResponse.json({ message: "Blog post saved successfully", result }, { status: 200 });
-  } catch (error: any) {
+  } catch (error:any) {
     console.error("Error saving blog post:", error);
     return NextResponse.json({ message: `Server error: ${error.message}` }, { status: 500 });
   }
@@ -50,7 +50,7 @@ export async function GET(req: NextRequest) {
       .lean();
 
     return NextResponse.json({ posts, totalPages });
-  } catch (error: any) {
+  } catch (error:any) {
     console.error("Error fetching blog posts:", error);
     return NextResponse.json({ message: error.message }, { status: 500 });
   }
