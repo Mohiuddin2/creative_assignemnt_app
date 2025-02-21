@@ -16,7 +16,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Create ASA",
+  title: "Creative ASA",
   description: "Honey: A natural health healing system",
 };
 
