@@ -86,7 +86,7 @@ export default function AssignmentList() {
               <tr>
                 <th className="border px-4 py-2">#</th>
                 <th className="border px-4 py-2">Submitted By</th>
-                <th className="border px-4 py-2">Subject</th>
+                <th className="border px-4 py-2">Title</th>
                 <th className="border px-4 py-2">Date</th>
                 <th className="border px-4 py-2">File</th>
                 <th className="border px-4 py-2">Rating</th>
@@ -97,7 +97,7 @@ export default function AssignmentList() {
                 <tr key={assignment._id} className="hover:bg-dark-100  bg-slate-100 text-black">
                   <td className="border px-4 py-2">{index + 1}</td>
                   <td className="border px-4 py-2">{assignment.submittedBy}</td>
-                  <td className="border px-4 py-2">{assignment.subject}</td>
+                  <td className="border px-4 py-2">{assignment.title}</td>
                   <td className="border px-4 py-2">{new Date(assignment.submittedAt).toLocaleDateString('en-GB')}</td>
                   <td className="border px-4 py-2">
                   <a
