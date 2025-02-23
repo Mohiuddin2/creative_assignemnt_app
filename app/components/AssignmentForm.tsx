@@ -65,7 +65,7 @@ export default function AssignmentForm() {
             placeholder="Subject"
             value={subject}
             onChange={(e) => setSubject(e.target.value)}
-            className="input input-bordered w-full"
+            className="input input-bordered w-full bg-slate-100 text-black"
             required
           />
           {/* <input
@@ -81,16 +81,16 @@ export default function AssignmentForm() {
             placeholder="Assignment Title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="input input-bordered w-full"
+            className="input input-bordered w-full  bg-slate-100 text-black"
             required
           />
 
           {/* Description Input */}
           <textarea
-            placeholder="Assignment Description"
+            placeholder="Assignment Description(Optional)"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="textarea textarea-bordered w-full"
+            className="textarea textarea-bordered w-full  bg-slate-100 text-black"
             required
           />
 

@@ -94,18 +94,19 @@ export default function AssignmentList() {
             </thead>
             <tbody>
               {assignments.map((assignment, index) => (
-                <tr key={assignment._id} className="hover:bg-dark-100">
+                <tr key={assignment._id} className="hover:bg-dark-100  bg-slate-100 text-black">
                   <td className="border px-4 py-2">{index + 1}</td>
                   <td className="border px-4 py-2">{assignment.submittedBy}</td>
                   <td className="border px-4 py-2">{assignment.subject}</td>
                   <td className="border px-4 py-2">{new Date(assignment.submittedAt).toLocaleDateString('en-GB')}</td>
                   <td className="border px-4 py-2">
-                    <a
+                  <a
                       href={assignment.fileUrl}
-                      download
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-block w-max rounded-lg bg-secondary px-4 py-2 text-black transition hover:bg-secondary-focus"
                     >
-                      ⬇️ Download
+                     ⬇️ Download
                     </a>
                   </td>
                   <td className="border px-4 py-2">
@@ -113,7 +114,7 @@ export default function AssignmentList() {
                       {[1, 2, 3, 4, 5].map((star) => (
                         <svg
                           key={star}
-                          className={`w-6 h-6 cursor-pointer transition-colors ${star <= assignment.rating ? "text-yellow-500" : "text-gray-300"} hover:text-yellow-400`}
+                          className={`w-6 h-6 cursor-pointer transition-colors ${star <= assignment.rating ? "text-yellow-500" : "text-black"} hover:text-green-500`}
                           fill="currentColor"
                           viewBox="0 0 20 20"
                           xmlns="http://www.w3.org/2000/svg"

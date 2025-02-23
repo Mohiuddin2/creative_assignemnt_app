@@ -20,3 +20,4 @@ export async function GET() {
   const assignments = await Assignment.find();
   return NextResponse.json(assignments);
 }
+
