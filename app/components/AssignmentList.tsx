@@ -33,7 +33,7 @@ export default function AssignmentList() {
       .get<Assignment[]>("/api/assignments")
       .then((res) => {
         const sortedAssignments = res.data.sort(
-          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+          (a, b) => new Date(b.submittedAt).getTime() - new Date(a.submittedAt).getTime()
         );
         setAssignments(sortedAssignments);
       })
